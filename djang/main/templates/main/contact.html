@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Contact me
+{% endblock %}
+
+{% block headsins %}
+<a class="nav-link" href="/">Home</a>
+<a class="nav-link" href="/about">About</a>
+<a class="nav-link active" aria-current="page" href="/contact">Contact</a>
+{% endblock %}
+
+{% block namedesc %}
+<h1>Contact me</h1>
+<form method="post" style="margin-top: 50px">
+    {% csrf_token %}
+
+    <center>{{ form.gmail }}<br>
+    {{ form.question }}</center><br>
+    <button type="submit" class="btn btn-success w-50">Send</button>
+</form>
+{% endblock %}
