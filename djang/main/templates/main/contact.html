@@ -5,18 +5,23 @@ Contact me
 {% endblock %}
 
 {% block headsins %}
-<a class="nav-link" href="/">Home</a>
-<a class="nav-link" href="/about">About</a>
-<a class="nav-link active" aria-current="page" href="/contact">Contact</a>
+<a class="nav-link" href="/">Домой</a>
+<a class="nav-link" href="/about">Портфолио</a>
+<a class="nav-link active" aria-current="page" href="/contact">Связь</a>
 {% endblock %}
 
 {% block namedesc %}
-<h1>Contact me</h1>
-<form method="post" style="margin-top: 50px">
-    {% csrf_token %}
+<div style="margin-left:50%; margin-right:-1.5%">
+    <h1>Напишите мне</h1>
+    <form method="post" style="margin-top: 50px; margin-bottom:10px">
+        {% csrf_token %}
+        <center>{{ form.gmail }}<br>
+        {{ form.question }}</center><br>
+        <button type="submit" class="btn btn-success w-100">Отправить</button>
+    </form>
+    <div class="mt-auto text-white-50">
+        <p>Или самостоятельно на почту rusakvlad2@gmail.com</p>
+    </div>
+</div>
 
-    <center>{{ form.gmail }}<br>
-    {{ form.question }}</center><br>
-    <button type="submit" class="btn btn-success w-50">Send</button>
-</form>
 {% endblock %}

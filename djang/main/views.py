@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .models import Ask
 from .forms import AskForm
 
@@ -16,6 +16,8 @@ def about(request):
 
 def contact(request):
     if request.method == 'POST':
+        gm = request.POST["gmail"]
+        qu = request.POST["question"]
         s = Ask(date=str(datetime.now().date()), time=str(datetime.now().time())[0:8], gmail=request.POST["gmail"], question=request.POST["question"])
         s.save()
     form = AskForm()

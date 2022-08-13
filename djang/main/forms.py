@@ -7,11 +7,11 @@ class AskForm(ModelForm):
         fields = ["gmail", "question"]
         widgets = {
             "gmail": TextInput(attrs={
-                'class': 'form-control w-50',
-                'placeholder': 'Your e-mail...'
+                'class': 'form-control w-100',
+                'placeholder': 'Ваша почта...'
             }),
             "question": Textarea(attrs={
-                'class': 'form-control w-50',
-                'placeholder': 'Your question...'
+                'class': 'form-control w-100',
+                'placeholder': 'Ваше сообщение...'
             }),
         }
