@@ -17,15 +17,11 @@ About page
 
     <div style="margin-top:5%" id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item">
-          <iframe height="350" width="90%" class="d-block" src="https://www.youtube.com/embed/4HZLqmK1K8o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% for el in landings %}
+        <div class="{{ el.active }}">
+          <iframe style="height: 37vh;" width="90%" class="d-block" src="{{ el.link }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <div class="carousel-item active">
-          <iframe height="350" width="90%" class="d-block" src="https://www.youtube.com/embed/p3Ox5kGdY2k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="carousel-item">
-          <iframe height="350" width="90%" class="d-block" src="https://www.youtube.com/embed/Xb-FVnSFOuY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+        {% endfor %}
       </div>
       <a style="margin-left:10%; background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);"  class="carousel-control-prev" data-bs-target="#carouselExampleControls" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -34,23 +30,19 @@ About page
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
       </a>
     </div>
-    <h1 style="font-size: 190%; margin-top: 3%;" class="card-title pricing-card-title"><small class="text-muted fw-light">от </small>$10</h1>
+    <h1 style="font-size: 190%; margin-top: 3%;" class="card-title pricing-card-title"><small class="text fw-light">от </small>$10</h1>
 </div>
 <hr style="margin-left: 40%" class="featurette-divider">
 <div align="right" style="margin-left: 40%; margin-top: 5%; margin-bottom: 5%" class="col-md-7 order-md-2">
     <h2 class="featurette-heading fw-normal lh-1">Лэндинговая страница с возможностью оформления заявки</h2>
-    <p class="lead">Двустраничный сайт для демонстрации вашего товара или бренда.</p>
+    <p class="lead">Двустраничный сайт для демонстрации вашего товара или бренда. Вторая страница имеет форму для заполнения клиентом. Информация из этой формы переходит в БД и просматривается владельцем сайта с панели администратора.</p>
     <div style="margin-top:5%" id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item">
-          <iframe height="350" width="90%" class="d-block" src="https://www.youtube.com/embed/4HZLqmK1K8o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% for el in db_landings %}
+        <div class="{{ el.active }}">
+          <iframe style="height: 37vh;" width="90%" class="d-block" src="{{ el.link }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <div class="carousel-item active">
-          <iframe height="350" width="90%" class="d-block" src="https://www.youtube.com/embed/p3Ox5kGdY2k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="carousel-item">
-          <iframe height="350" width="90%" class="d-block" src="https://www.youtube.com/embed/Xb-FVnSFOuY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+        {% endfor %}
       </div>
       <a style="margin-left:10%; background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);"  class="carousel-control-prev" data-bs-target="#carouselExampleControls2" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -59,7 +51,7 @@ About page
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
       </a>
     </div>
-    <h1 style="font-size: 190%; margin-top: 3%;" class="card-title pricing-card-title"><small class="text-muted fw-light">от </small>$40</h1>
+    <h1 style="font-size: 190%; margin-top: 3%;" class="card-title pricing-card-title"><small class="text fw-light">от </small>$40</h1>
 </div>
 <hr style="margin-left: 40%" class="featurette-divider">
 <div align="right" style="margin-left: 40%; margin-top: 5%; margin-bottom: 5%" class="col-md-7 order-md-2">
@@ -67,15 +59,11 @@ About page
     <p class="lead">Полноценный интернет-магазин. Имеет базу данных, позволяющую изменять ассортимент, базу данных с заявками и покупками клиентов, а также другие функции необходимые конкретно Вам.</p>
     <div style="margin-top:5%" id="carouselExampleControls3" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item">
-          <iframe height="350" width="90%" class="d-block" src="https://www.youtube.com/embed/4HZLqmK1K8o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% for el in shops %}
+        <div class="{{ el.active }}">
+          <iframe style="height: 37vh;" width="90%" class="d-block" src="{{ el.link }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <div class="carousel-item active">
-          <iframe height="350" width="90%" class="d-block" src="https://www.youtube.com/embed/p3Ox5kGdY2k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="carousel-item">
-          <iframe height="350" width="90%" class="d-block" src="https://www.youtube.com/embed/Xb-FVnSFOuY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+        {% endfor %}
       </div>
       <a style="margin-left:10%; background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);"  class="carousel-control-prev" data-bs-target="#carouselExampleControls3" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -84,7 +72,7 @@ About page
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
       </a>
     </div>
-    <h1 style="font-size: 190%; margin-top: 3%;" class="card-title pricing-card-title"><small class="text-muted fw-light">от </small>$200</h1>
+    <h1 style="font-size: 190%; margin-top: 3%;" class="card-title pricing-card-title"><small class="text fw-light">от </small>$200</h1>
 </div>
 <hr style="margin-left: 40%" class="featurette-divider">
 {% endblock %}

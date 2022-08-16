@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from django.shortcuts import render
-from .models import Ask
+from .models import Ask, Landing, DB_Landing, Shop
 from .forms import AskForm
 
 
@@ -11,7 +11,10 @@ def index(request):
 
 
 def about(request):
-    return render(request, 'main/about.html')
+    landings = Landing.objects.order_by('id')
+    db_landings = DB_Landing.objects.order_by('id')
+    shops = Shop.objects.order_by('id')
+    return render(request, 'main/about.html', {'landings': landings, 'db_landings': db_landings, 'shops': shops})
 
 
 def contact(request):
